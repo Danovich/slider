@@ -1,0 +1,13 @@
+<div class="carousel">
+  <div class="carousel-container" @slideIn>
+    <div class="slide" *ngFor="let slide of groupedSlides[currentIndex]">
+      <h1>{{slide.title}}</h1>
+      <div class="controls">
+        <button (click)="onShowClick(slide)">Show</button>
+        <button>Open rule</button>
+      </div>
+    </div>
+  </div>
+  <button class="control prev" (click)="onPrevClick()">prev</button>
+  <button class="control next" (click)="onNextClick()">next</button>
+</div>
