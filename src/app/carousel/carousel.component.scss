@@ -1,0 +1,111 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-container {
+  position: relative;
+  height: 400px;
+  width: 1000px;
+  // border: 1px red solid;
+
+  .carousel-cells {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    // overflow: hidden;
+
+    .card {
+      width: 333px;
+      height: 100%;
+      background: #fafafa;
+      border: 1px solid #000;
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 3px;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      .controls {
+        margin-left: auto;
+
+        button {
+          padding: 5px;
+
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+
+    .carousel-dot {
+      cursor: pointer;
+      display: inline-block;
+        border: 2px solid #000;
+        border-radius: 100px;
+        margin: 4px;
+        width: 12px;
+        height: 12px;
+
+      &.active {
+        background-color: blue;
+      }
+    }
+  }
+
+}
+
+   .carousel-arrow {
+     width: 40px;
+     height: 40px;
+     background-color: #fff;
+     background-repeat: no-repeat;
+     background-size: 31px;
+     background-position: center;
+    //  border-radius: 100px;
+     position: absolute;
+     top: 50%;
+     margin-top: -20px;
+     z-index: 10;
+     cursor: pointer;
+   &.carousel-arrow-prev {
+     left: -60px;
+     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNMTUuNDEgMTYuNTlMMTAuODMgMTJsNC41OC00LjU5TDE0IDZsLTYgNiA2IDYgMS40MS0xLjQxeiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMFYweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==);
+   }
+   &.carousel-arrow-next {
+     right: -60px;
+     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij48cGF0aCBkPSJNOC41OSAxNi41OUwxMy4xNyAxMiA4LjU5IDcuNDEgMTAgNmw2IDYtNiA2LTEuNDEtMS40MXoiLz48cGF0aCBkPSJNMCAwaDI0djI0SDBWMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=)
+   }
+   .carousel-arrows-outside {
+     .carousel-arrow-prev {
+       left: -60px;
+     }
+     .carousel-arrow-next {
+       right: -60px;
+     }
+   }
+   }
+
+   button:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+}

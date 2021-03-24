@@ -1,0 +1,15 @@
+<div class="carousel-container">
+  <div class="carousel-cells">
+    <app-carousel-item *ngFor="let item of groupedSlides[currentIndex]" [item]="item">
+      <button (click)="onShowClick(item)">Show</button>
+      <button>Open rule →</button>
+    </app-carousel-item>
+  </div>
+  <div class="carousel-dots">
+    <div *ngFor="let dot of dotsArr; index as i" class="carousel-dot" [class.active]="i === currentIndex" (click)="onDotClick(i)"></div>
+  </div>
+  <div class="carousel-arrows">
+    <button title="prev" class="carousel-arrow carousel-arrow-prev" [disabled]="isPrevDisabled" (click)="onPrevClick()"></button>
+    <button title="next" class="carousel-arrow carousel-arrow-next" [disabled]="isNextDisabled" (click)="onNextClick()"></button>
+  </div>
+</div>
